@@ -1,0 +1,32 @@
+## O que falta fazer?
+
+	Criar o primeiro cfg para um curso
+	Criar o main.cfg inicial
+	Subprograma para checar se cfg de curso esta certo
+	Criar esqueleto das estruturas basicas inicias
+	Criar funções fantasmas
+	
+	Implementar estruturas basicas inicias
+	Implementar funções fantasmas
+	Criar uma tela basica com comandos essencias (up, down, left, right, enter, esc)
+	criar a tela de confirmação
+	Criar a tela de seleção de linguagem
+	Criar a tela de selecionar curso
+
+Criar a tela de selecionar materias ja cursadas <--
+Criar tela (provisoria) de aguardar enquanto são gerados os .txt files das opções <--
+
+adicionais:
+
+Criar a tela de periodicidade da materia
+Criar a tela de opções extras
+Criar a tela de seleção de resultados
+Criar a tela de analise de resultados
+
+Resize automatico
+Remodelar estruturas basicas
+Rearranjar os erros em macros significativos
+Transpor todas as strings que estão presas a alguma linguagem para o cfg de linguagem
+Criar outros cfgs como exemplo [opcional]
+	Criar Makefile
+Testar
