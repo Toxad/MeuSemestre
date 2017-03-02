@@ -13,7 +13,7 @@
 	do { \
 		if(!isempty_list(&a->inicio)) { \
 			remove_list(&a->inicio, b); \
-			a->tamanho -= 1; \
+			a->tamanho -= 1; } \
 	} while(0)
 
 #define _GET_ELEM_LIST(a, b) \
