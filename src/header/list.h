@@ -1,6 +1,8 @@
 #ifndef _LIST_H
 #define _LIST_H
 
+#include <stdlib.h>
+
 /* Macros para a struct Lista */
 
 #define _INSERT_LIST(a, b) \
