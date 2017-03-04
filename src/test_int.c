@@ -25,5 +25,17 @@ int main(int argc, char* argv[]) {
   }
   printf("%d\n", _GET_ELEM_LIST(int_list, i));
 
+  printf("Removing half items...\n\n");
+  if(size < 2) return 0;
+  while(_GET_SIZE(int_list) > (size / 2)) {
+    _REMOVE_LIST(int_list, 0);
+  }
+
+  printf("The list has %d elements: ", _GET_SIZE(int_list));
+  for(i = 0; i < _GET_SIZE(int_list)-1; i++) {
+    printf("%d ", _GET_ELEM_LIST(int_list, i));
+  }
+  printf("%d\n", _GET_ELEM_LIST(int_list, i));
+
   return 0;
 }
