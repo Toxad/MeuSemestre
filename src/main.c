@@ -29,12 +29,13 @@ int main(int argc, char const *argv[])
 	if(argc > 1) {
 		// options
 		if( strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "-h") == 0) {
-			printf("Usage: program [options]\nOptions:\n\t-h, --help\tdisplay this\n\t-v, --version\tversion of this program\n");
+			printf("Usage: %s [options]\nOptions:\n\t-h, --help\tdisplay this\n\t-v, --version\tversion of this program\n", argv[0]);
 			return 0;
 		}
 		else if(strcmp(argv[1], "--version") == 0 || strcmp(argv[1], "-v") == 0) {
 			config_setting_t* version = config_lookup(&cfg, "version");
-			printf("Version: %s\n", (char*) config_setting_get_string(version));
+			config_setting_t* program_name = config_lookup(&cfg, "program_name");
+			printf("%s: v%s\n", (char*) config_setting_get_string(program_name), (char*) config_setting_get_string(version));
 			return 0;
 		}
 		else {
@@ -52,13 +53,6 @@ int run(config_t* cfg) {
 	clear();
 	curs_set(0);
 	keypad(stdscr, TRUE);
-	if(LINES < 45 || COLS < 135) {
-		printw("ERROR: Minimum number of lines: 45 (%d), columns: 135 (%d)\n", LINES, COLS);
-		refresh();
-		getch();
-		endwin();
-		exit(3);
-	}
 	if(has_colors() == FALSE) {
 		printw("Your terminal does not support color\n");
 		refresh();

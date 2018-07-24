@@ -24,8 +24,11 @@ main.o:
 ui.o:
 	gcc -c "src/ui.c" -o ui.o
 
+remake: clean all
+
 clean:
 	${RM} build
 	${RM} test*
 	${RM} bin
 	${RM} *.o
+	${RM} config.cfg
