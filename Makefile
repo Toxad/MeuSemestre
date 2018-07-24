@@ -1,6 +1,10 @@
 # check libconfig/ncurses is installed
+
+RM=rm -rf
+
 all: list.o ui.o main.o
-	gcc -Wall -o build list.o ui.o main.o -lncurses -libconfig
+	gcc -Wall -o build list.o ui.o main.o -lncurses -lconfig
+	mkdir --parents bin
 	mv build bin/build
 
 test_int.o: list.o
@@ -8,6 +12,8 @@ test_int.o: list.o
 
 test_int: test_int.o list.o
 	gcc -Wall -o test_int test_int.o list.o
+	./test_int
+	make clean
 
 list.o:
 	gcc -c "src/list.c" -o list.o
@@ -19,4 +25,7 @@ ui.o:
 	gcc -c "src/ui.c" -o ui.o
 
 clean:
-	rm -f *.o
+	${RM} build
+	${RM} test*
+	${RM} bin
+	${RM} *.o
